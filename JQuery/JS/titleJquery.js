@@ -28,17 +28,3 @@ $(document).ready(function(){
     });
 });
 
-/*$("#title").val("Hello world!");*/
-/*$(function(){
-
-});*/
-
-/*$('document').ready(function(){
-	$("#search").click(function(){
-	$('#title').val("Hello");
-	$("p").text("Hello World");
-});
-});*/
-/*var search= function(){
-	$('hi').html("Hello");
-}*/
