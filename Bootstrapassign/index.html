@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Website Title & Description for Search Engine purposes -->
+    <title>Kerala Tourism</title>
+    <meta name="description" content="">
+    <!-- Mobile viewport optimized -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Bootstrap CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="includes/css/styles.css" rel="stylesheet">
+    <!-- Include Modernizr in the head, before any other Javascript -->
+    <script src="includes/js/modernizr-2.6.2.min.js"></script>
+    <!-- Using google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <!-- Div for Navbar and header -->
+    <div class="navbar navbar-default navbar-fixed-top" id="header">
+        <!-- Div for container to allign the header contents in same as content of webpage -->
+        <div class="container" id="containerheader">
+            <div class="navbar-header" id="navbarheader">
+                <!-- For button when you move to smaller scale -->
+                <button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Used for Logo -->
+                <div id="logoimage">
+                    <a class="navbar-brand logo" href="#"><img id="logoimage" src="images/ktourism_large.jpg"></a>
+                </div>
+            </div>
+            <!-- Div for contents in Navigation bar in header -->
+            <div class="navbar-collapse collapse navbar-responsive-collapse header">
+                <!-- <h1 class="navbar-left visible-lg " id="title">Kerala Tourism</h1> -->
+                <!-- The components used in header section -->
+                <div id="component">
+                    <!-- For the My Account tab in header -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>My Account<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-wrench"></span>Settings</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header"><a href="#"><span class="glyphicon glyphicon-off"></span> Sign out </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- For Home,Places,Contact tab in header -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Places<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Famous Cities</a></li>
+                                <li><a href="#">Waterfalls</a></li>
+                                <li><a href="">Nature Loving</a></li>
+                                <li><a href="#">Historical monument</a></li>
+                                <li><a href="#">Beach</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <!-- Form tab for the search within the site -->
+                    <form class="navbar-form navbar-right">
+                        <input type="text" class="form-control" placeholder="Search here.." name="search" id="searchinput">
+                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Div tag for the Carousel slides -->
+    <div class="carousel slide" id="MyCarousel">
+        <!-- List of slide indicators -->
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#MyCarousel"></li>
+            <li data-slide-to="1" data-target="#MyCarousel"></li>
+            <li data-slide-to="2" data-target="#MyCarousel"></li>
+        </ol>
+        <!-- Div tag for the contents of the Carousel for including the contents in slides -->
+        <div class="carousel-inner">
+            <!-- First slide -->
+            <div class="item active" id="slide1">
+                <img src="images/carousel1_large.jpg" alt="Munnar large image">
+                <div class="carousel-caption ">
+                    <h4>Munnar</h4>
+                    <p>Munnar is a beautiful place located at Idukki district in Kerala. It is a hill station and with full of greenery.</p>
+                </div>
+            </div>
+            <!-- Second slide -->
+            <div class="item" id="slide2">
+                <img src="images/carousel2_large.jpg" alt="Houseboat large image">
+                <div class="carousel-caption ">
+                    <h4>Houseboat</h4>
+                    <p>Munnar is a beautiful place located at Idukki district in Kerala. It is a hill station and with full of greenery.</p>
+                </div>
+            </div>
+            <!-- Third slide -->
+            <div class="item" id="slide3">
+                <img src="images/carousel3_large.jpg" alt="boat race in Alleppey">
+                <div class="carousel-caption ">
+                    <h4>Boat race</h4>
+                    <p>Munnar is a beautiful place located at Idukki district in Kerala. It is a hill station and with full of greenery.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Below two links are used as navigator for previous and next in the Carousel -->
+        <a href="#MyCarousel" class="left carousel-control" data-slide="prev"><span class="icon-prev"></span></a>
+        <a href="#MyCarousel" class="right carousel-control" data-slide="next"><span class="icon-next"></span></a>
+    </div>
+    <!-- Main container for whole the content -->
+    <div class="container" id="main">
+        <!-- Div tag for containing three column data -->
+        <div class="row" id="threeColumns">
+            <!-- First column -->
+            <div class="col-sm-4 feature">
+                <!-- For the firt panel -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">About Kerala</h3>
+                    </div>
+                    <p>Kerala, historically known as <em>Keralam</em>, is an Indian state in South India on the Malabar coast. It was formed on 1 November 1956 following the States Reorganisation Act by combining Malayalam-speaking regions. Spread over 38,863 km2 (15,005 sq mi), it is bordered by Karnataka to the north and northeast, Tamil Nadu to the east and south, and the Lakshadweep Sea to the west. With 33,387,677 inhabitants as per the 2011 Census, Kerala is the thirteenth largest state by population and is divided into 14 districts with the capital being <em>Thiruvananthapuram</em>. <strong>Malayalam</strong> is the most widely spoken language and is also the official language of the state.</p>
+                    <a href="#" target="_blank" class="btn btn-warning btn-block">Click here for more..</a>
+                </div>
+            </div>
+            <!-- Second column -->
+            <div class="col-sm-4 feature">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">God's own Country ?.</h3>
+                    </div>
+                    <p>Kerala located in South india in an extra ordinary land with almost all elements of nature. Poets wrote poems about this state and many writers find hard to express the full beauty of this place.Nestled between the pristine waters of the Arabian sea on the west and the lush Western Ghat mountains on the east, its intense network of rivers and lagoons, thick forests, exotic wildlife, tranquil stretches of emerald backwaters and a long shoreline of serene beaches make it a traveler's paradise. God's own country! Paradise !!! The rich cultural heritage , the dance form and the essence of music are so impressive that the tourist will be spell bound by this magic features of kerala.</p>
+                    <a href="#" target="_blank" class="btn btn-danger btn-block">Click here for more..</a>
+                </div>
+            </div>
+            <!-- Third column -->
+            <div class="col-sm-4 feature">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Kerala Map</h3>
+                    </div>
+                    <div id="keralamap"></div>
+                    <a href="#" target="_blank" class="btn btn-info btn-block">Want to see big map? Click here..</a>
+                </div>
+            </div>
+        </div>
+        <!-- Div tag for creating two sections -->
+        <div class="row" id="twoSections">
+            <!-- First column -->
+            <div class="col-sm-6">
+                <!-- Div for act as tab able content -->
+                <div class="tabbable">
+                    <!-- For listing the tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1" data-toggle="tab">Video</a></li>
+                        <li><a href="#tab2" data-toggle="tab">Map</a></li>
+                    </ul>
+                    <!-- Tab content -->
+                    <div class="tab-content">
+                        <!-- the content for the first tab -->
+                        <div class="tab-pane active" id="tab1">
+                            <h4>Kerala Tourism promotion video&nbsp<span class="glyphicon glyphicon-facetime-video"></span></h4>
+                            <iframe width="100%" height="300" src="https://www.youtube.com/embed/qJbML4Mzx8U"></iframe>
+                            <p>Please watch the promotional video for Kerala tourism and take a moment to give feedback about us by clicking on the below button..</p>
+                            <a href="#myModal" role="button" class="btn btn-warning" data-toggle="modal">Feedback&nbsp<span class="glyphicon glyphicon-comment"></span></a>
+                            <div class="modal fade" id="myModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button class="close" data-dismiss="modal">&times;</button>
+                                            <h3 class="modal-title">Feedback&nbsp<span class="glyphicon glyphicon-comment"></span></h3>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Hello !!
+                                                <br>Please provide feedback for us, it will be great to know how we are doing ! and what we need to improve.. </p>
+                                            <form class="horizontal-form">
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label" for="email">Email ID</label>
+                                                    <input type="text" id="email">
+                                                    <br>
+                                                    <label for="comments">Feedback comments </label>
+                                                    <textarea class="form-control" rows="5" id="comments"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-primary" role="button" data-dismiss="modal">Cancel</button>
+                                            <button class="btn btn-primary" role="button">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Content of the secnd tab -->
+                        <div class="tab-pane" id="tab2">
+                            <h4>Kerala, India&nbsp<small class="glyphicon glyphicon-map-marker">Find below location of Kerala using google Map</small></h4>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4016651.708900481!2d73.88449052076744!3d10.539093300774807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0812ffd49cf55b%3A0x64bd90fbed387c99!2sKerala!5e0!3m2!1sen!2sin!4v1469536225867" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Second section or column -->
+            <div class="col-sm-6">
+                <!-- Showing as a list group -->
+                <div class="list-group" id="secondSection">
+                    <!-- first list item  -->
+                    <span class="list-group-item">
+                            <h3 class="list-group-item-heading"><u>History</u></h3>
+                            <p class="list-group-item-text">The history of Keralam, India, dates back many millennia. Stone age carvings in the Edakkal Caves feature pictorial writings believed to date to at least the Neolithic era around 5,000 BC, indicating the presence of a prehistoric civilisation or settlement in this region. From as early as 3000 BC, Kerala had established itself as a major spice trade centre. Keralam had direct contact across the Arabian Sea with all the major Mediterranean and Red Sea ports as well those of the Far East. The spice trade between Keralam and much of the world was one of the main drivers of the world economy. For much of history, ports in Keralam were the busiest (Muziris) among all trade and travel routes in the history of the world.</p>
+                        </span>
+                    <!-- Second list item -->
+                    <span class="list-group-item">
+                            <h3 class="list-group-item-heading"><u>People of Kerala</u></h3>
+                            <p class="list-group-item-text">Kerala is one of India's most progressive states in terms of social welfare and quality of life. The State boasts of one of India's highest literacy rates, highest life expectancy and lowest child mortality rates. The literacy rate for women is one of the highest in all of Asia. Enjoying a unique cosmopolitan viewpoint, the people of Kerala, at all levels of society, have greater access to services and opportunities - as well as a greater say in their governance.
+                            </p>
+                        </span>
+                    <!-- Third list item -->
+                    <span class="list-group-item">
+                            <h3 class="list-group-item-heading"><u>How to reach Kerala</u></h3>
+                            <p class="list-group-item-text">Kerala can be accessed by air; the state has three major international airports. One in the southern part, Thiruvananthapuram International Airport, one in central Kerala, the Cochin International Airport and the other in northern part, Karipur or Calicut International Airport.
+                            Kerala is easily accessible by road from any part of the country through National Highways 17, 47 and 49. Directly connected by road with Karnataka and Tamil Nadu.
+                            Most of the places in and out of Kerala are interconnected by 200 Railway Stations. Direct trains to Kerala can be availed from Delhi, Mumbai, Chennai, Bangalore, Kolkata and other major Indian cities.
+                            From Kochi, there are regular ships venturing towards the Lakshadweep Islands.</p>
+                        </span>
+                </div>
+            </div>
+        </div>
+        <!-- For a intro section as full width row -->
+        <div class="row" id="KTourismDetails">
+            <div class="col-12">
+                <!-- Content of introduction with header and description and a more info -->
+                <div class="well ">
+                    <div class="page-header">
+                        <h2>Kerala Tourism<small>&nbsp A brief introduction..</small></h2>
+                    </div>
+                    <p class="lead">This is the official website of Kerala Tourism, one of the most popular travel websites in India. The site contains exhaustive information on God's Own Country- Kerala</p>
+                    <a href="#" class="btn btn-large btn-primary hidden-sm">Click here for more info..</a>
+                    <a href="#" class="btn btn-large btn-success visible-sm">Click for more &nbsp<span class="glyphicon glyphicon-eye-open"></span></a>
+                    <br>
+                    <!-- Will enable alert box when click on the below link button -->
+                    <a href="#" class="btn btn-small btn-primary" id="alertMe"><span class="glyphicon glyphicon-thumbs-up">Like us</span></a>
+                </div>
+                <!-- Will show alert box when click on the button -->
+                <div class="alert alert-success alert-block fade in" id="successAlert">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <h3>You Liked !</h3>
+                    <p>Thank you for Liking Kerala Tourism !!.. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer of the page -->
+    <footer>
+        <!-- Div for container in footer -->
+        <div class="container text-center">
+            <div class="row">
+                <!-- First column in footer -->
+                <div class="col-sm-4">
+                    <h5>Copyright &copy; 2016 (Kerala Tourism Department)</h5>
+                </div>
+                <!-- Second column in footer -->
+                <div class="col-sm-4">
+                    <ul class="noStyle">
+                        <li><a href="#">More info <span class="glyphicon glyphicon-info-sign"></span></a></li>
+                        <li><a href="#">Contact us<span class="glyphicon glyphicon-earphone"></span></a></li>
+                        <li><a href="#">Write to us<span class="glyphicon glyphicon-edit"></span></a></li>
+                        <li><a href="#">Chat with us between 9 AM-6 AM IST<span class="glyphicon glyphicon-comment"></span></a></li>
+                    </ul>
+                </div>
+                <!-- Third column in footer -->
+                <div class="col-sm-2 text-center">
+                    <h5 id="plantrip">Plan your Travel</h5>
+                    <ul class="noStyle">
+                        <li><a href="#">Book for Road Trip</a></li>
+                        <li><a href="#">Indian Railway</a></li>
+                        <li><a href="#">Book a flight</a></li>
+                    </ul>
+                </div>
+                <!-- Fourth column in footer -->
+                <div class="col-sm-2">
+                    <h5 id="right">Follow us on</h5>
+                    <br>
+                    <ul class="noStyle">
+                        <li><a href="">Twitter</a></li>
+                        <li><a href="">Facebook</a></li>
+                        <li><a href="">Google plus</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- First try for the online version of jQuery-->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- If no online access, fallback to our hardcoded version of jQuery -->
+    <script>
+    window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="includes/js/script.js"></script>
+</body>
+
+</html>

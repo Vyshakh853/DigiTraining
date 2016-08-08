@@ -1,0 +1,317 @@
+/* --------------------------------------
+   Layout
+   -------------------------------------- */
+
+p {
+    font-size: 15px;
+    font-family: 'Courgette', cursive;
+}
+
+footer {
+    background: #F0F8FF;
+    padding-top: 20px;
+    color: #191970;
+    font-size: 12px;
+}
+
+#header {
+    background: #F0F8FF;
+}
+
+#KTourismDetails {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+
+/* --------------------------------------
+   Typography
+   -------------------------------------- */
+
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+#keralamap {
+    height: 350px;
+    background: url('../../images/keralamap_medium.jpg') top center no-repeat;
+}
+
+.well .page-header {
+    margin-top: 0px;
+}
+
+.well .page-header h2 {
+    margin-top: 0px;
+}
+
+.noStyle {
+    list-style: none;
+}
+
+#right {
+    margin-left: 70px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#plantrip {
+    margin-left: 30px;
+    margin-top: 0px;
+}
+
+#alertMe {
+    margin-top: 10px;
+}
+
+
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
+
+.logo {
+    padding: 0px 0px 0px 15px;
+    margin-left: 0px;
+}
+
+#searchinput {
+    width: 200px;
+}
+
+.header {
+    padding-top: -95px;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    color: #008000;
+    font-size: 50px;
+    margin-bottom: 0px;
+    margin-top: 27px;
+    margin-left: 200px;
+}
+
+#component {
+    padding-top: 32px;
+    margin-bottom: 0px;
+}
+
+#logoimage {
+    background: url('../../images/ktourism_large.jpg') top center no-repeat;
+    padding-top: 0px;
+}
+
+
+/* --------------------------------------
+   Carousel
+   -------------------------------------- */
+
+#MyCarousel {
+    margin-top: 83px;
+}
+
+#MyCarousel.item {
+    height: 200px;
+}
+
+#slide1 {
+    background: url('../../images/carousel1_medium.jpg') top center no-repeat;
+}
+
+#slide2 {
+    background: url('../../images/carousel2_medium.jpg') top center no-repeat;
+}
+
+#slide3 {
+    background: url('../../images/carousel3_medium.jpg') top center no-repeat;
+}
+
+.item img {
+    width: 100%;
+}
+
+
+/* --------------------------------------
+   Global Styles
+   -------------------------------------- */
+
+.alert {
+    margin-top: 10px;
+    display: none;
+}
+
+#threeColumns {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#secondSection {
+    max-height: 490px;
+    overflow-y: scroll;
+    padding-bottom: 10px;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    color: #008000;
+    font-size: 50px;
+}
+
+h3 {
+    font-weight: bolder;
+}
+
+
+/* --------------------------------------
+   Media Queries
+   -------------------------------------- */
+
+
+/* Portrait & landscape phone */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #logoimage {
+        background: url('../../images/ktourism_check.jpg') top center no-repeat;
+        padding-top: 0px;
+        height: 132px;
+    }
+    #navbarheader {
+        height: 132px;
+    }
+    #MyCarousel {
+        margin-top: 132px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #MyCarousel {
+        margin-top: 82px;
+    }
+    #logoimage {
+        background: url('../../images/ktourism.jpg') top center no-repeat;
+        height: 80px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    #logoimage {
+        background: url('../../images/ktourism_small.jpg') top center no-repeat;
+        padding-top: 0px;
+    }
+    #MyCarousel {
+        margin-top: 100px;
+    }
+    h4 {
+        font-size: 12px;
+    }
+    p {
+        font-size: 10px;
+    }
+    #containerheader{
+      height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    #logoimage {
+        width: 150px;
+        height: 50px;
+        background: url('../../images/ktourism_small.jpg') top center no-repeat;
+    }
+    .logo {
+         height: 50px;
+        padding-left: 0px;
+    }
+    #MyCarousel {
+        margin-top: 50px;
+    }
+    h4{
+      font-size: 10px;
+    }
+    p{
+      font-size: 7px;
+    }
+    carousel-caption{
+      margin-top: 30px;
+    }
+}
+
+
+/*@media (min-width: 992px) {
+   #logoimage {
+        background: url('../../images/ktourism.jpg') top center no-repeat;
+        padding-top: 0px;
+        max-height: 82px;
+    }
+}*/
+
+
+/* Landscape phone to portrait tablet */
+
+@media (max-width: 768px) {
+    #MyCarousel.item {
+        height: 150px;
+    }
+    #logoimage {
+        background: url('../../images/ktourism_small.jpg') top center no-repeat;
+        padding-top: 0px;
+    }
+    #slide1 {
+        background: url('../../images/carousel1_small.jpg') top center no-repeat;
+    }
+    #slide2 {
+        background: url('../../images/carousel2_small.jpg') top center no-repeat;
+    }
+    #slide3 {
+        background: url('../../images/carousel3_small.jpg') top center no-repeat;
+    }
+    #keralamap {
+        height: 250px;
+        background: url('../../images/keralamap_small.jpg') top center no-repeat;
+    }
+    #firstthree {
+        margin-top: 170px;
+    }
+    p {
+        font-size: 12px;
+    }
+    h4 {
+        font-size: 14px;
+    }
+}
+
+
+/* Large desktop */
+
+@media (min-width: 1200px) {
+    #MyCarousel.item {
+        height: 300px;
+    }
+    #MyCarousel {
+        margin-top: 82px;
+    }
+    #slide1 {
+        background: url('../../images/carousel1_large.jpg') top center no-repeat;
+    }
+    #slide2 {
+        background: url('../../images/carousel2_large.jpg') top center no-repeat;
+    }
+    #slide3 {
+        background: url('../../images/carousel3_large.jpg') top center no-repeat;
+    }
+    #keralamap {
+        height: 410px;
+        background: url('../../images/keralamap_large.jpg') top center no-repeat;
+    }
+    #firstthree {
+        margin-top: 160px;
+    }
+    p {
+        font-size: 18px;
+    }
+    #logoimage {
+        background: url('../../images/ktourism.jpg') top center no-repeat;
+        height: 80px;
+    }
+}
