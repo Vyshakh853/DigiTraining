@@ -7,6 +7,7 @@ $(document).ready(function(){
 	var urlCondition="";
 	var pageStart=0, 
 		pageEnd=21;
+	var checkSubmit="";
 	/*Ajax GET event*/
 	var ajaxGet=function(){
 		$.ajax({
@@ -71,13 +72,23 @@ $(document).ready(function(){
 	});
 	/*Add new book*/
 	$('#inputForm').on('submit',function(e){
-		console.log("Inside add new");
 		e.preventDefault();
+		if(checkSubmit=='Add'){
+			addNewBook();
+		}
+		else if(checkSubmit=='Edit'){
+			console.log("Right");
+			editBook();
+		}
+		console.log(checkSubmit);
+	});
+	var addNewBook= function(){
+		console.log("Inside add new");
 		var $bookname=$('#bookname').val();
 		var $authorname=$('#authorname').val();
 		var $publishername=$('#publishername').val();
-		var $type=$('#type').val();
-		var $genres=$('#Genres').val();
+		var $type=$('input[name=type]:checked').val();//$('#type').val();
+		var $genres=$('select[id=Genres]').val();//$('#Genres').val();
 		var $publishedyear=$('#publishedyear').val();
 		var $language=$('#language').val();
 		var $price=$('#price').val();
@@ -94,29 +105,15 @@ $(document).ready(function(){
   			};
   		posturlCondition="";
   		ajaxPost(bookPost);
-	});
-	// Value of modal window to empty
-	$('#addBooks').click(function(){
-		$('#bookname').val("");
-		$('#authorname').val("");
-		$('#publishername').val("");
-		$('#type').val("");
-		$('#Genres').val("");
-		$('#publishedyear').val("");
-		$('#language').val("");
-		$('#price').val("");
-		posturlCondition="";
-		$('.editFooter').html('<button class="btn btn-primary" role="button" data-dismiss="modal">Cancel</button><button type="submit" class="btn btn-success" role="button" id="addBook">Add Book</button>');
-	});
-	/*Edit*/
-	$('#inputForm').on('submit',function(e){
+	};
+	var editBook=function(){
 		console.log("Inside edit");
-		e.preventDefault();
+		console.log($('input[name=type]:checked').val());
 		var $bookname=$('#bookname').val();
 		var $authorname=$('#authorname').val();
 		var $publishername=$('#publishername').val();
-		var $type=$('#type').val();
-		var $genres=$('#Genres').val();
+		var $type=$('input[name=type]:checked').val();//$('#type').val();
+		var $genres=$('select[id=Genres]').val();//$('#Genres').val();
 		var $publishedyear=$('#publishedyear').val();
 		var $language=$('#language').val();
 		var $price=$('#price').val();
@@ -132,7 +129,54 @@ $(document).ready(function(){
     				"Price": $price
   			};
   		ajaxPUT(bookPost);
+	};
+	// Value of modal window to empty
+	$('#addBooks').click(function(){
+		$('#bookname').val("");
+		$('#authorname').val("");
+		$('#publishername').val("");
+		$('#fiction').prop('checked',false);
+		$('#Genres').prop("disabled",true);
+		$('#Genres').html("");
+		//$('#Genres').val("");
+		$('#publishedyear').val("");
+		$('#language').val("");
+		$('#price').val("");
+		posturlCondition="";
+		checkSubmit="Add";
+		$('.editFooter').html('<button class="btn btn-primary" role="button" data-dismiss="modal">Cancel</button><button type="submit" class="btn btn-success" role="button" id="addBook">Add Book</button>');
 	});
+	var fictionGenres=['Scientific','Travel','Dictionary','Health'];
+	var nonfictionGenres=['Comedy','Novel','Action','Drama'];
+	//console($('#Genres').val());
+	$('input:radio').click(function(){
+		if($("input:checked").val() == "Fiction")
+		{
+			$('#Genres').prop("disabled",false);
+    		//ajax call to php file and pass a parameter buyer
+    		console.log("Fiction selected");
+    		$('#Genres').html("");
+    		for(var i=0;i<fictionGenres.length;i++)
+            {
+                var opt = new Option(fictionGenres[i]);
+                opt.value=fictionGenres[i];
+                $("#Genres").append(opt);
+            }
+		}
+		else{
+    		//ajax call to php file and pass a parameter merchant
+    		console.log("non- Fiction selected");
+    		$('#Genres').prop("disabled",false);
+    		$('#Genres').html("");
+    		for(var i=0;i<nonfictionGenres.length;i++)
+            {
+                var opt = new Option(nonfictionGenres[i]);
+                opt.value=nonfictionGenres[i];
+                $("#Genres").append(opt);
+            }        
+		}
+	});
+
 	/*Delete */
 	$bookList.delegate('#deleteButton','click',function(){
 		var id=$(this).attr('data-id');
@@ -163,14 +207,47 @@ $(document).ready(function(){
 			type:"GET",
 			url : 'http://localhost:8080/Books/'+id,
 			success: function(result){
+    				$('#Genres').prop("disabled",false);
 					$('#bookname').val(result.Book_name);
 					$('#authorname').val(result.Author_name);
 					$('#publishername').val(result.Publisher_name);
-					$('#type').val(result.Type);
-					$('#Genres').val(result.Genres);
+					if(result.Type=='Non-Fiction'){
+						$('#Genres').html("");
+						$('#nonfiction').prop('checked',true);
+						var opt = new Option(result.Genres);
+                		opt.value=result.Genres;
+                		$("#Genres").append(opt);
+                		for(var i=0;i<nonfictionGenres.length;i++)
+            			{
+            				if(result.Genres!=fictionGenres[i]){
+                			var opt = new Option(nonfictionGenres[i]);
+                			opt.value=nonfictionGenres[i];
+                			$("#Genres").append(opt);
+                			}
+            			}
+					}
+					else{
+						$('#fiction').prop('checked',true);
+						$('#Genres').html('');
+						var opt = new Option(result.Genres);
+                		opt.value=result.Genres;
+                		$("#Genres").append(opt);
+                		for(var i=0;i<fictionGenres.length;i++)
+            			{
+            				if(result.Genres!=fictionGenres[i]){
+                			var opt = new Option(fictionGenres[i]);
+                			opt.value=fictionGenres[i];
+                			$("#Genres").append(opt);
+                			}
+            			}
+					}
+					//$('#type').val(result.Type);
+					//$('select[id=Genres]').val(result.Genres);
+					//$('#Genres').val(result.Genres);
 					$('#publishedyear').val(result.Published_year);
 					$('#language').val(result.Language);
 					$('#price').val(result.Price);
+					checkSubmit="Edit";
 					$('.editFooter').html('<button class="btn btn-primary" role="button" data-dismiss="modal">Cancel</button><button type="submit" class="btn btn-success" role="button" id="saveEdit">Save</button>')
 				},
 			error: function(){

@@ -43,8 +43,8 @@
                                     <h3 class="modal-title">Add Book&nbsp<span class="glyphicon glyphicon-book"></span></h3>
                                 </div>
                                 <form class="horizontal-form" id="inputForm" validate>
-                                <div class="modal-body modalbody">
-                                        <div class="form-group">
+                                    <div class="modal-body modalbody">
+                                        <div class="form-group col-sm-12">
                                             <label class="col-sm-4 control-label" for="bookname">Book Name</label>
                                             <input class="col-sm-8 form-control" type="text" id="bookname" required/>
                                             <!-- <br> -->
@@ -55,25 +55,30 @@
                                             <input class="col-sm-8 form-control" type="text" id="publishername" required>
                                             <br>
                                             <label class="col-sm-4 control-label" for="publishedyear">Published year</label>
-                                            <input class="col-sm-8 form-control" type="text" id="publishedyear" required>
+                                            <input class="col-sm-8 form-control" type="text" pattern="[0-9]{4}" title="Enter year in YYYY format" id="publishedyear" required>
                                             <br>
+                                            <br>
+                                            <!-- <label class="col-sm-4 control-label" for="type">Type</label>
+                                            <input class="col-sm-8 form-control" type="text" id="type" required> -->
                                             <label class="col-sm-4 control-label" for="type">Type</label>
-                                            <input class="col-sm-8 form-control" type="text" id="type" required>
+                                            <span class="col-sm-8 form-control"><input type="radio" name="type" id="fiction" value="Fiction" required>Fiction &nbsp
+                                            <input type="radio" name="type" id="nonfiction" value="Non-Fiction">Non-Fiction</span>
                                             <br>
                                             <label class="col-sm-4 control-label" for="Genres">Genres</label>
-                                            <input class="col-sm-8 form-control" type="text" id="Genres" required>
+                                            <!-- <input class="col-sm-8 form-control" type="text" id="Genres" required> -->
+                                            <select class="col-sm-8 form-control" id="Genres" required disabled>
+                                            </select>
                                             <br>
                                             <label class="col-sm-4 control-label" for="language">Language</label>
                                             <input class="col-sm-8 form-control" type="text" id="language" required>
                                             <br>
                                             <label class="col-sm-4 control-label" for="Price">Price</label>
-                                            <input class="col-sm-8 form-control" type="text" id="price" required>
+                                            <input class="col-sm-8 form-control" type="text" id="price" title="Insert as 000.00 $" pattern="\d+\.\d{2}\s\$" required>
                                             <br>
                                         </div>
-                                    
-                                </div>
-                                <div class="modal-footer editFooter">
-                                </div>
+                                    </div>
+                                    <div class="modal-footer editFooter">
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -156,7 +161,7 @@
     </div>
     <!-- Footer -->
     <footer>
-        <p class="footerfont">Website for searching Movie details @!
+        <p class="footerfont">Website for searching Book details @!
             <br> Contact us<a href="#">here</a></p>
         <!-- Each font awesome icons for social links -->
         <a href="https://www.amazone.com"><i class="fa fa-amazon" style="font-size:48px;"></i></a>
